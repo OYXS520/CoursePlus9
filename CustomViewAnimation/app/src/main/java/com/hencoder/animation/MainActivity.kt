@@ -1,30 +1,89 @@
 package com.hencoder.animation
 
+import android.animation.Animator
+import android.animation.Animator.AnimatorListener
 import android.animation.ObjectAnimator
 import android.animation.TypeEvaluator
 import android.graphics.PointF
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
 import com.hencoder.animation.view.ProvinceEvaluator
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+  private val handler = Handler(Looper.getMainLooper())
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_main)
 
-    /*view.animate() // radius
-      .translationX(200.dp) // setTranslationX(10) setTranslationX(20) setTranslationX(40)
-      .translationY(100.dp)
-      .alpha(0.5f)
-      .scaleX(2f)
-      .scaleY(2f)
-      .rotation(90f)
-      .setStartDelay(1000)*/
+//    view.animate() // radius
+//      .translationX(200.dp) // setTranslationX(10) setTranslationX(20) setTranslationX(40)
+//      .translationY(100.dp)
+//      .alpha(0.5f)
+//      .scaleX(2f)
+//      .scaleY(2f)
+//      .rotation(90f)
+//      .setStartDelay(1000)
 
-    /*val animator = ObjectAnimator.ofFloat(view, "radius", 150.dp)
-    animator.startDelay = 1000
-    animator.start()*/
+    val animator1 = ObjectAnimator.ofFloat(view1, "radius", 150.dp)
+    val animator2 = ObjectAnimator.ofObject(view2, "point", PointFEvaluator(), PointF(100.dp, 200.dp))
+    val animator3 = ObjectAnimator.ofObject(view3, "province", ProvinceEvaluator(), "澳门特别行政区")
+
+
+    animator1.startDelay = 2000
+    animator1.addListener(object :AnimatorListener{
+      override fun onAnimationStart(animation: Animator?) {
+
+      }
+
+      override fun onAnimationEnd(animation: Animator?) {
+        handler.post {
+          view1.isVisible = false
+          animator2.startDelay = 1000
+          animator2.duration = 2000
+          animator2.start()
+        }
+
+
+      }
+
+      override fun onAnimationCancel(animation: Animator?) {
+
+      }
+
+      override fun onAnimationRepeat(animation: Animator?) {
+
+      }
+
+    })
+    animator2.addListener(object :AnimatorListener{
+      override fun onAnimationStart(animation: Animator?) {
+
+      }
+
+      override fun onAnimationEnd(animation: Animator?) {
+        handler.post {
+          view2.isVisible = false
+          animator3.startDelay = 1000
+          animator3.duration = 10000
+          animator3.start()
+        }
+
+      }
+
+      override fun onAnimationCancel(animation: Animator?) {
+
+      }
+
+      override fun onAnimationRepeat(animation: Animator?) {
+
+      }
+
+    })
+    animator1.start()
 
     /*val bottomFlipAnimator = ObjectAnimator.ofFloat(view, "bottomFlip", 60f)
     bottomFlipAnimator.startDelay = 1000
@@ -61,19 +120,11 @@ class MainActivity : AppCompatActivity() {
     animator.duration = 2000
     animator.start()*/
 
-    /*val animator = ObjectAnimator.ofObject(view, "point", PointFEvaluator(), PointF(100.dp, 200.dp))
-    animator.startDelay = 1000
-    animator.duration = 2000
-    animator.start()*/
 
-    val animator = ObjectAnimator.ofObject(view, "province", ProvinceEvaluator(), "澳门特别行政区")
-    animator.startDelay = 1000
-    animator.duration = 10000
-    animator.start()
-
-    view.animate()
-      .translationY(200.dp)
-      .withLayer()
+//
+//    view.animate()
+//      .translationY(200.dp)
+//      .withLayer()
   }
 
   class PointFEvaluator : TypeEvaluator<PointF> {
