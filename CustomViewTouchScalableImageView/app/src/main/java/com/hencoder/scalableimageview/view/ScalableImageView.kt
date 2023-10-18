@@ -10,8 +10,6 @@ import android.view.MotionEvent
 import android.view.ScaleGestureDetector
 import android.view.View
 import android.widget.OverScroller
-import android.widget.Scroller
-import androidx.core.animation.doOnEnd
 import androidx.core.view.GestureDetectorCompat
 import androidx.core.view.ViewCompat
 import com.hencoder.scalableimageview.dp
@@ -86,7 +84,7 @@ class ScalableImageView(context: Context?, attrs: AttributeSet?) : View(context,
     offsetY = max(offsetY, -(bitmap.height * bigScale - height) / 2)
   }
 
-  inner class HenGestureListener : GestureDetector.SimpleOnGestureListener() {
+  private inner class HenGestureListener : GestureDetector.SimpleOnGestureListener() {
     override fun onDown(e: MotionEvent): Boolean {
       return true
     }

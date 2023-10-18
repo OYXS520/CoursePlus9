@@ -24,7 +24,7 @@ private val CORNER_RADIUS = 4.dp
 private val X_PADDING = 16.dp.toInt()
 private val Y_PADDING = 8.dp.toInt()
 
-class ColoredTextView(context: Context?, attrs: AttributeSet?) : AppCompatTextView(context, attrs) {
+class ColoredTextView(context: Context, attrs: AttributeSet?) : AppCompatTextView(context, attrs) {
   private var paint = Paint(Paint.ANTI_ALIAS_FLAG)
   private val random = Random()
 

@@ -7,15 +7,15 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#30000000">
+<!--    <FrameLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="#30000000">-->
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </FrameLayout>
+<!--        <EditText-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content" />-->
+<!--    </FrameLayout>-->
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -24,7 +24,8 @@
 
         <com.hencoder.materialedittext.MaterialEditText
             android:id="@+id/met"
-            app:useFloatingLabel="false"
+            app:useFloatingLabel="true"
+            app:customAttribute="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Username"/>

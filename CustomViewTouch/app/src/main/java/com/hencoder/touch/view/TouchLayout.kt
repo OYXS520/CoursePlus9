@@ -17,16 +17,17 @@ class TouchLayout(context: Context?, attrs: AttributeSet?) : ViewGroup(context, 
 
   override fun onInterceptTouchEvent(ev: MotionEvent?): Boolean {
     return super.onInterceptTouchEvent(ev)
-    val delta = ev.y - ??
-    if (abs(delta) > SLOP) {
-      return true
-    } else {
-      return false
-    }
+//    val delta = ev.y - ??
+//    if (abs(delta) > SLOP) {
+//      return true
+//    } else {
+//      return false
+//    }
   }
 
   override fun onTouchEvent(event: MotionEvent?): Boolean {
-    ???
-    return ???
+//    ???
+//    return ???
+    TODO()
   }
 }
