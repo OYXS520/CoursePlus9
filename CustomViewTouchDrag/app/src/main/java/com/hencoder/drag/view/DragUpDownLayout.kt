@@ -34,7 +34,8 @@ class DragUpDownLayout(context: Context, attrs: AttributeSet?) : FrameLayout(con
 
   internal inner class DragCallback : ViewDragHelper.Callback() {
     override fun tryCaptureView(child: View, pointerId: Int): Boolean {
-      return child === draggedView
+//      return child === draggedView
+      return true
     }
 
     override fun clampViewPositionVertical(child: View, top: Int, dy: Int): Int {

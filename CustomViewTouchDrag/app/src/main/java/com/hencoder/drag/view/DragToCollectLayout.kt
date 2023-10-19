@@ -12,7 +12,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.ViewCompat
 import kotlinx.android.synthetic.main.drag_to_collect.view.*
 
-class DragToCollectLayout(context: Context?, attrs: AttributeSet?) : ConstraintLayout(context, attrs) {
+class DragToCollectLayout(context: Context, attrs: AttributeSet?) : ConstraintLayout(context, attrs) {
   private var dragStarter = OnLongClickListener { v ->
     val imageData = ClipData.newPlainText("name", v.contentDescription)
     ViewCompat.startDragAndDrop(v, imageData, DragShadowBuilder(v), null, 0)

@@ -2,6 +2,7 @@ package com.hencoder.drag.view
 
 import android.content.Context
 import android.util.AttributeSet
+import android.util.Log
 import android.view.DragEvent
 import android.view.View
 import android.view.ViewGroup
@@ -102,7 +103,8 @@ class DragListenerGridView(context: Context?, attrs: AttributeSet?) : ViewGroup(
     for ((index, child) in orderedChildren.withIndex()) {
       childLeft = index % 2 * childWidth
       childTop = index / 2 * childHeight
-      child.animate()
+      Log.d("shuouyang", "index:${index}, (${childLeft},${childTop}) ")
+      child.animate() //2 ->  0
         .translationX(childLeft.toFloat())
         .translationY(childTop.toFloat())
         .setDuration(150)
