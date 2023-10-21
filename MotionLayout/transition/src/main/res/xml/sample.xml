@@ -13,7 +13,9 @@
 
 
         <KeyFrameSet>
-
+            <KeyTrigger app:motionTarget="@id/view"
+                app:framePosition="80"
+                app:onPositiveCross="hide"/>
             <KeyTimeCycle
                 android:rotation="0"
                 app:framePosition="0"
@@ -53,7 +55,11 @@
                 android:layout_height="80dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
+            <PropertySet android:alpha="1"
+                android:visibility="visible"
+                app:visibilityMode="normal"
+                app:layout_constraintTag="ta"
+                app:motionProgress="1"/>
         </Constraint>
     </ConstraintSet>
 
@@ -66,6 +72,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
         </Constraint>
     </ConstraintSet>
 </MotionScene>

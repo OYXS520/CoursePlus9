@@ -1,88 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.hencoder.drag.view.DragUpDownLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <com.hencoder.drag.test.DragGridView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <TextView
-            android:gravity="center"
-            android:textSize="30sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#1abc9c"
-            android:text="😊"/>
-        <TextView
-            android:gravity="center"
-            android:textSize="30sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#2ecc71"
-            android:text="😉" />
-
-        <TextView
-            android:gravity="center"
-            android:textSize="30sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#3498db"
-            android:text="😔"/>
-
-        <TextView
-            android:gravity="center"
-            android:textSize="30sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#9b59b6"
-            android:text="😂"/>
-
-        <TextView
-            android:gravity="center"
-            android:textSize="30sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#f1c40f"
-            android:text="😎"/>
-        <TextView
-            android:gravity="center"
-            android:textSize="30sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#e67e22"
-            android:text="😠"/>
-        <TextView
-            android:gravity="center"
-            android:textSize="30sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#f8a5c2"
-            android:text="🫡"/>
-        <TextView
-            android:gravity="center"
-            android:textSize="30sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#63cdda"
-            android:text="🍉"/>
-
-        <TextView
-            android:gravity="center"
-            android:textSize="30sp"
-            android:id="@+id/test"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#e66767"
-            android:text="💍"/>
-    </com.hencoder.drag.test.DragGridView>
-
     <LinearLayout
         android:id="@+id/collectLayout"
-        android:text="icon"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:orientation="horizontal"
-        android:layout_gravity="bottom"
-        android:background="@android:color/darker_gray"/>
-</FrameLayout>
+        android:background="#59298a"/>
+</com.hencoder.drag.view.DragUpDownLayout>
